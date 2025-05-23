@@ -1,0 +1,64 @@
+---
+const backgroundImage = "/images/CTA.webp";
+const whatsappUrl = "https://wa.me/5217713384831"; // Reemplaza con tu número de WhatsApp
+const facebookUrl = "https://facebook.com/yourpage"; // Reemplaza con tu URL de Facebook
+const instagramUrl = "https://instagram.com/yourpage"; // Reemplaza con tu URL de Instagram
+
+const whatsappIcon = "/images/iconos/w.png"; // Reemplaza con la ruta de tu icono de WhatsApp
+const facebookIcon = "/images/iconos/f.png"; // Reemplaza con la ruta de tu icono de Facebook
+const instagramIcon = "/images/iconos/i.png"; // Reemplaza con la ruta de tu icono de Instagram
+---
+
+<section class="bg-gray-100 text-gray-800 py-16 md:py-28 lg:py-12 lg:flex lg:justify-center">
+  <div class="overflow-hidden bg-white lg:mx-8 lg:flex lg:max-w-6xl lg:w-full lg:shadow-md lg:rounded-xl">
+    <div class="lg:w-1/2">
+      <div class="h-64 bg-cover lg:h-full" style={`background-image:url('${backgroundImage}')`}></div>
+    </div>
+
+    <div class="max-w-xl px-6 py-12 lg:max-w-5xl lg:w-1/2">
+      <h2 class="text-2xl font-semibold text-gray-800 md:text-3xl">
+        ¡Únete a Nuestra Familia de Danza!
+      </h2>
+
+      <p class="mt-4 text-gray-600">
+        Sé parte de algo más grande. En Di Ballu, no solo enseñamos danza, construimos una comunidad unida por la pasión, el esfuerzo y los sueños. 
+        Sigue nuestras redes sociales para descubrir cómo juntos creamos historias inolvidables. ¡Únete a nuestra familia y escribe tu propia historia en el mundo de la danza!
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 mt-6">
+        <!-- Botón WhatsApp -->
+        <a
+          href={whatsappUrl}
+          class="flex items-center bg-gradient-to-r from-green-400 to-green-600 text-white px-6 py-3 rounded-full font-semibold hover:from-green-500 hover:to-green-700 transform transition-transform duration-300 shadow-md hover:shadow-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={whatsappIcon} alt="WhatsApp" class="w-6 h-6 mr-2" />
+          WhatsApp
+        </a>
+
+        <!-- Botón Facebook -->
+        <a
+          href={facebookUrl}
+          class="flex items-center bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-blue-800 transform transition-transform duration-300 shadow-md hover:shadow-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={facebookIcon} alt="Facebook" class="w-6 h-6 mr-2" />
+          Facebook
+        </a>
+
+        <!-- Botón Instagram -->
+        <a
+          href={instagramUrl}
+          class="flex items-center bg-gradient-to-r from-pink-500 to-pink-700 text-white px-6 py-3 rounded-full font-semibold hover:from-pink-600 hover:to-pink-800 transform transition-transform duration-300 shadow-md hover:shadow-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={instagramIcon} alt="Instagram" class="w-6 h-6 mr-2" />
+          Instagram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

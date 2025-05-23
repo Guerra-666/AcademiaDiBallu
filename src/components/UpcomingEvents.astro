@@ -1,0 +1,103 @@
+---
+interface Event {
+  date: string;
+  name: string;
+  location: string;
+  ticketsUrl?: string;
+  imageUrl: string;
+  mapUrl: string;
+}
+
+const events: Event[] = [
+  {
+    date: "2025-11-15",
+    name: "Gala de Invierno",
+    location: "Teatro Metropolitan",
+    ticketsUrl: "https://example.com/tickets/gala-invierno",
+    imageUrl: "/images/metropolitan.webp",
+    mapUrl: "https://www.google.com/maps?q=Teatro+Principal",
+  },
+  {
+    date: "2025-12-20",
+    name: "Festival Navideño",
+    location: "Auditorio Nacional",
+    ticketsUrl: "https://example.com/tickets/festival-navideno",
+    imageUrl: "/images/nacional.webp",
+    mapUrl: "https://www.google.com/maps?q=Auditorio+Norte",
+  },
+];
+
+const generateWhatsAppUrl = (event) => {
+  const message = `Hola, estoy interesado en obtener más información sobre el evento "${event.name}" que se llevará a cabo el ${new Date(event.date).toLocaleDateString("es-ES", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  })} en ${event.location}.`;
+  return `https://wa.me/5217713384831?text=${encodeURIComponent(message)}`; // Reemplaza 5217713384831 con el número de WhatsApp
+};
+---
+
+<section class="bg-gray-100  text-gray-800 py-5 md:py-28">
+  <div class="container mx-auto px-6 md:px-12">
+    <!-- Título -->
+    <h2 class="text-center text-4xl md:text-5xl font-bold mb-12 text-gray-900">
+      Próximas Presentaciones
+    </h2>
+
+    <!-- Grid de Eventos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {events.map((event) => (
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-2xl">
+          <!-- Imagen del Evento -->
+          <div class="relative h-64 md:h-80">
+            <img
+              src={event.imageUrl}
+              alt={event.location}
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">
+                {event.name}
+              </h3>
+              <p class="text-lg md:text-xl text-gray-200">
+                {event.location}
+              </p>
+              <p class="text-sm md:text-base text-gray-300">
+                {new Date(event.date).toLocaleDateString("es-ES", {
+                  weekday: "long",
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+            </div>
+          </div>
+
+          <!-- Información del Evento -->
+          <div class="p-6 bg-gray-100 flex flex-col md:flex-row justify-between items-center">
+            {event.ticketsUrl && (
+              <a
+                href={generateWhatsAppUrl(event)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-gradient-to-r from-pink-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold hover:from-red-500 hover:to-pink-500 transform transition-transform duration-300 mb-4 md:mb-0 md:mr-4 shadow-md hover:shadow-lg"
+              >
+                Comprar boletos
+              </a>
+            )}
+            <a
+              href={event.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 py-3 rounded-full font-semibold hover:from-teal-500 hover:to-green-500 transform transition-transform duration-300 shadow-md hover:shadow-lg"
+            >
+              Ver Ubicación
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+const title: string = "Bienvenidos a la Academia de Danza";
+const subtitle: string = "Donde la pasión por la danza cobra vida";
+const callToAction: string = "Agendar clase muestra gratuita";
+const backgroundImages: string[] = [
+  "/images/hero.webp",
+  "/images/hero2.webp",
+  "/images/hero3.webp",
+];
+const logoUrl: string = "/images/logo.webp"; // Reemplaza con la ruta de tu logo
+const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20interesaria%20agendar%20una%20clase%20muestra,%20me%20podria%20brindar%20mas%20informes"; // Reemplaza con tu número de WhatsApp y mensaje predeterminado
+---
+<section class="relative h-screen overflow-hidden">
+  <!-- Fondo con imágenes alternadas -->
+  <div class="absolute inset-0">
+    {backgroundImages.map((image, index) => (
+      <div
+        class={`absolute inset-0 h-full w-full bg-cover bg-center transition-opacity duration-[3000ms] ${
+          index === 0 ? "opacity-100" : "opacity-0"
+        }`}
+        style={`background-image: url('${image}')`}
+        data-carousel-slide={index}
+      ></div>
+    ))}
+  </div>
+
+  <!-- Degradado dinámico -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80"></div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-8 md:px-16 text-center text-white">
+    <img
+      src={logoUrl}
+      alt="Logo de la Academia de Danza"
+      class="w-40 md:w-60 mb-4 animate-bounce"
+      loading="eager"
+    />
+    <h1 class="text-4xl md:text-5xl font-bold">{title}</h1>
+    <p class="mt-4 text-lg md:text-2xl max-w-2xl leading-relaxed text-gray-300 drop-shadow-md">
+      {subtitle}
+    </p>
+    <a
+      href={whatsappUrl}
+      class="mt-8 px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 text-white text-xl font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {callToAction}
+    </a>
+  </div>
+</section>

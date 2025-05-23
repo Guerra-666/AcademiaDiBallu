@@ -1,0 +1,50 @@
+---
+const socialLinks = [
+  { name: "LinkedIn", url: "https://linkedin.com/in/adrianguerra", icon: "/images/svg/li.svg" },
+  { name: "GitHub", url: "https://github.com/adrianguerra", icon: "/images/svg/git.svg" },
+  { name: "Website", url: "https://adrianguerra.com", icon: "/images/svg/web.svg" },
+];
+const adrianGuerraUrl: string = "https://adrianguerra.com"; // Reemplaza con tu página web
+---
+
+<footer class="bg-gradient-to-b from-gray-100 to-white py-10 px-10 font-sans tracking-wide">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="flex flex-wrap items-center justify-between gap-6">
+      <div>
+        <a href="#">
+          <img src="/images/logo.webp" alt="Academia de Danza Di Ballu" class="w-36" />
+        </a>
+      </div>
+      <p class="text-center text-black text-base">
+        © {new Date().getFullYear()} Academia de Danza Di Ballu. Todos los derechos reservados.
+      </p>
+    </div>
+    
+    <hr class="my-6 border-gray-300" />
+    
+    <div class="flex items-center justify-center mt-6">
+      <p class="text-black text-base">
+        Diseñado y desarrollado por{" "}
+        <a href={adrianGuerraUrl} class="text-pink-500 hover:underline">
+          Adrian Guerra Dev
+        </a>
+      </p>
+    </div>
+    <ul class="flex items-center space-x-6">
+      {socialLinks.map((link) => (
+        <li key={link.name}>
+          <a
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.name}
+            class="text-black hover:underline text-base flex items-center"
+          >
+            <img src={link.icon} alt={link.name} class="w-6 h-6 mr-2" />
+            {link.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</footer>

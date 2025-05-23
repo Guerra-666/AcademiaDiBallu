@@ -1,22 +1,69 @@
+---
+const siteTitle = "Academia de Danza Di Ballu - Clases de Danza y Ballet en Pachuca";
+const siteDescription = "Academia de Danza Di Ballu - Transformamos movimientos en arte. Descubre el amor por la danza.";
+const siteUrl = "https://tuacademia.com"; // Reemplaza con la URL de tu sitio web
+const siteImage = "/images/social-preview.jpg"; // Reemplaza con la ruta de tu imagen de vista previa para redes sociales
+const keywords = "danza, academia de danza, arte, baile, clases de baile, Di Ballu";
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es-MX">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Academia de Danza Di Ballu" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={siteUrl} />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:image" content={siteImage} />
+    <meta property="og:image:alt" content="Imagen representativa de la Academia de Danza Di Ballu" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={siteImage} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    <link href="src/styles/global.css" rel="stylesheet">
+  </head>
+  <body class="bg-gray-50 text-gray-800 antialiased">
+    <slot />
+
+    <!-- Botón flotante -->
+    <button 
+      id="scrollToTop" 
+      aria-label="Ir al inicio de la página" 
+      class="fixed bottom-4 right-4 bg-gradient-to-r from-pink-500 to-red-500 text-white p-3 rounded-full shadow-lg hover:from-red-500 hover:to-pink-500 hover:shadow-xl transition ease-in-out duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script defer>
+      document.getElementById('scrollToTop').addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+  }
 </style>

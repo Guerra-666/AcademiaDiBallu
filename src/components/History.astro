@@ -1,0 +1,50 @@
+---
+const description: string =
+  "En 2018, Juan De Dios, con más de 20 años de experiencia en la danza, fundó la Academia de Danza Di Ballu con el sueño de transformar vidas a través del arte. Su pasión y profesionalismo dieron vida a un espacio donde niños y jóvenes no solo aprenden a bailar, sino también a desarrollar disciplina, confianza y amor por la expresión artística. Con un equipo de docentes dedicados y programas diseñados para el crecimiento integral, Di Ballu se ha convertido en un hogar para quienes buscan superar sus límites y brillar. Aquí, cada paso cuenta una historia, y cada logro refleja el poder de la danza para inspirar y transformar.";
+const imageUrl: string = "/images/historia/equipo.webp"; // Asegúrate de tener esta imagen en tu carpeta de imágenes
+const galleryImages: string[] = [
+  "/images/historia/galeria1.webp",
+  "/images/historia/galeria2.webp",
+  "/images/historia/galeria3.webp",
+  "/images/historia/galeria4.webp",
+  "/images/historia/galeria5.webp",
+  "/images/historia/galeria6.webp",
+  "/images/historia/galeria7.webp",
+  "/images/historia/galeria8.webp",
+]; // Asegúrate de tener estas imágenes en tu carpeta de imágenes
+---
+
+<section class="bg-gray-100 text-gray-800 py-5 md:py-28" id="history">
+  <div class="container mx-auto px-6 md:px-12">
+    <!-- Sección de descripción -->
+    <div class="flex flex-col md:flex-row items-center mb-16">
+      <div class="md:w-1/2 mb-8 md:mb-0 px-4 md:px-8">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 leading-tight">
+          Nuestra Historia
+        </h2>
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">{description}</p>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img
+          src={imageUrl}
+          alt="Equipo de la academia"
+          class="rounded-lg shadow-xl transition-transform duration-300 hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <!-- Galería optimizada -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      {galleryImages.map((image, index) => (
+        <div class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+          <img
+            src={image}
+            alt={`Galería de la academia ${index + 1}`}
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

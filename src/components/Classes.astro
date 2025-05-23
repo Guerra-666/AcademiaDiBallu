@@ -1,0 +1,98 @@
+---
+interface Class {
+  name: string;
+  description: string;
+  icon: string;
+}
+
+const classes: Class[] = [
+  {
+    name: "Academia de Danza",
+    description:
+      "Más que un lugar para aprender, somos una comunidad apasionada por la danza. Descubre tu potencial en un ambiente de confianza y creatividad.",
+    icon: "💃",
+  },
+  {
+    name: "Baby Ballet",
+    description:
+      "Inicia a los más pequeños en el mágico mundo del ballet. Clases diseñadas para fomentar coordinación, disciplina y amor por la danza desde temprana edad.",
+    icon: "🩰",
+  },
+  {
+    name: "Ballet Inicial",
+    description:
+      "Comienza tu travesía en el ballet con clases enfocadas en desarrollar las bases esenciales. Descubre la elegancia y técnica desde el primer paso.",
+    icon: "🩰",
+  },
+  {
+    name: "Ballet Intermedio",
+    description:
+      "Eleva tu nivel con clases diseñadas para perfeccionar técnica, postura y expresión. Ideal para quienes buscan llevar su danza al próximo nivel.",
+    icon: "🩰",
+  },
+  {
+    name: "Ballet Avanzado",
+    description:
+      "Clases para bailarines comprometidos con la excelencia. Domina técnicas complejas y prepárate para brillar en escenarios profesionales.",
+    icon: "🩰",
+  },
+  {
+    name: "Ritmos Urbanos",
+    description:
+      "Siente la energía y la pasión de la danza urbana. Aprende movimientos frescos y expresivos al ritmo de los mejores beats.",
+    icon: "🕺",
+  },
+  {
+    name: "Folklor",
+    description:
+      "Celebra nuestras raíces y tradiciones con clases llenas de color, historia y cultura. Aprende a transmitir el espíritu del folclor en cada paso.",
+    icon: "🌾",
+  },
+  {
+    name: "Jazz",
+    description:
+      "Libera tu energía con movimientos dinámicos y llenos de estilo. Nuestras clases de jazz combinan técnica, ritmo y diversión en cada sesión.",
+    icon: "🎷",
+  },
+];
+
+---
+<section class="bg-gradient-to-b from-white to-gray-100 text-gray-800 py-16 md:py-28">
+
+  <div class="container mx-auto px-6 md:px-12 text-center">
+    <!-- Título -->
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-12 md:mb-16 text-gray-900">
+      Descubre nuestras clases
+    </h2>
+    <!-- Grid de Clases -->
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      {classes.map((classItem, index) => (
+        <article
+          class="rounded-xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 shadow-xl transition hover:bg-[length:400%_400%] hover:shadow-sm hover:[animation-duration:_4s] animate-fade-in-up"
+        >
+          <div class="rounded-[10px] bg-white p-6 flex flex-col items-center">
+            <!-- Icono -->
+            <div class="text-6xl md:text-7xl text-pink-500 mb-4 transition-transform group-hover:scale-110 duration-300">
+              {classItem.icon}
+            </div>
+            <!-- Nombre de la Clase -->
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              {classItem.name}
+            </h3>
+            <!-- Descripción -->
+            <p class="text-gray-600 leading-relaxed mb-4 text-center">
+              {classItem.description}
+            </p>
+            <!-- Botón -->
+            {/* <a
+              href="#"
+              class="mt-auto bg-pink-500 text-white text-sm md:text-base px-5 py-2 rounded-full shadow-md hover:bg-pink-600 focus:ring-4 focus:ring-pink-300 transition-colors duration-300"
+            >
+              Más información
+            </a> */}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
