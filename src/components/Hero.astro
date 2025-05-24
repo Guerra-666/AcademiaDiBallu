@@ -14,36 +14,40 @@ const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20inter
   <!-- Fondo con imágenes alternadas -->
   <div class="absolute inset-0">
     {backgroundImages.map((image, index) => (
-      <div
-        class={`absolute inset-0 h-full w-full bg-cover bg-center transition-opacity duration-[3000ms] ${
-          index === 0 ? "opacity-100" : "opacity-0"
-        }`}
-        style={`background-image: url('${image}')`}
-        data-carousel-slide={index}
-      ></div>
+        <div
+            class={`absolute inset-0 h-full w-full bg-cover bg-center transition-opacity duration-[3000ms] ${
+                index === 0 ? "opacity-100" : "opacity-0"
+            }`}
+            style={`background-image: url('${image}')`}
+            data-carousel-slide={index}
+        ></div>
     ))}
   </div>
 
-  <!-- Degradado dinámico -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80"></div>
+  <!-- Capa de overlay mejorada -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/90"></div>
 
   <!-- Contenido -->
   <div class="relative z-10 flex flex-col items-center justify-center h-full px-8 md:px-16 text-center text-white">
-    <img
-      src={logoUrl}
-      alt="Logo de la Academia de Danza"
-      class="w-40 md:w-60 mb-4 animate-bounce"
-      loading="eager"
-    />
-    <h1 class="text-4xl md:text-5xl font-bold">{title}</h1>
-    <p class="mt-4 text-lg md:text-2xl max-w-2xl leading-relaxed text-gray-300 drop-shadow-md">
+    <!-- Contenedor del logo con efecto vidrio esmerilado -->
+    <div class="bg-white/50 backdrop-blur-sm p-4 rounded-2xl shadow-xl mb-8 animate-fade-in-down">
+      <img
+          src={logoUrl}
+          alt="Logo de la Academia de Danza"
+          class="w-48 md:w-72 h-auto contrast-125 brightness-90"
+          loading="eager"
+      />
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-md">{title}</h1>
+    <p class="mt-4 text-lg md:text-2xl max-w-2xl leading-relaxed text-gray-800 font-medium backdrop-blur-xs bg-white/30 px-4 py-2 rounded-lg">
       {subtitle}
     </p>
     <a
-      href={whatsappUrl}
-      class="mt-8 px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-500 hover:to-pink-500 text-white text-xl font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-      target="_blank"
-      rel="noopener noreferrer"
+        href={whatsappUrl}
+        class="mt-8 px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 hover:from-red-600 hover:to-pink-600 text-white text-xl font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/30"
+        target="_blank"
+        rel="noopener noreferrer"
     >
       {callToAction}
     </a>
