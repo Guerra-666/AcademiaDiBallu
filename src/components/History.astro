@@ -14,36 +14,51 @@ const galleryImages: string[] = [
 ]; // Asegúrate de tener estas imágenes en tu carpeta de imágenes
 ---
 
-<section class="bg-gray-100 text-gray-800 py-5 md:py-28" id="history">
-  <div class="container mx-auto px-6 md:px-12">
+<section class="bg-gradient-to-b from-gray-50 to-white py-12 md:py-24 relative overflow-hidden" id="history">
+  <!-- Efecto de textura decorativa -->
+  <div class="absolute inset-0 bg-[radial-gradient(#f3f4f6_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+
+  <div class="container mx-auto px-4 md:px-8 relative z-10">
     <!-- Sección de descripción -->
-    <div class="flex flex-col md:flex-row items-center mb-16">
-      <div class="md:w-1/2 mb-8 md:mb-0 px-4 md:px-8">
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 leading-tight">
-          Nuestra Historia
+    <div class="flex flex-col lg:flex-row items-center gap-8 md:gap-12 mb-16 md:mb-20">
+      <div class="lg:w-1/2 space-y-6">
+        <h2 class="text-4xl md:text-6xl font-bold text-gray-900">
+          <span class="bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
+            Nuestra Historia
+          </span>
         </h2>
-        <p class="text-lg md:text-xl text-gray-700 leading-relaxed">{description}</p>
+        <p class="text-lg md:text-xl text-gray-700 leading-relaxed backdrop-blur-xs bg-white/50 px-4 py-2 rounded-lg">
+          {description}
+        </p>
       </div>
-      <div class="md:w-1/2 flex justify-center">
-        <img
-          src={imageUrl}
-          alt="Equipo de la academia"
-          class="rounded-lg shadow-xl transition-transform duration-300 hover:scale-105"
-          loading="lazy"
-        />
+
+      <div class="lg:w-1/2 flex justify-center">
+        <div class="relative overflow-hidden rounded-2xl shadow-xl border border-gray-200/50 hover:border-pink-500/30 transition-all duration-300">
+          <img
+              src={imageUrl}
+              alt="Equipo de la academia"
+              class="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        </div>
       </div>
     </div>
-    <!-- Galería optimizada -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+
+    <!-- Galería mejorada -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
       {galleryImages.map((image, index) => (
-        <div class="relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
-          <img
-            src={image}
-            alt={`Galería de la academia ${index + 1}`}
-            class="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
+          <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200/50 hover:border-pink-500/30">
+            <div class="aspect-square overflow-hidden">
+              <img
+                  src={image}
+                  alt={`Galería de la academia ${index + 1}`}
+                  class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+              />
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
       ))}
     </div>
   </div>
