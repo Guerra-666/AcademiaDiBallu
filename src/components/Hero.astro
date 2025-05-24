@@ -24,12 +24,12 @@ const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20inter
     ))}
   </div>
 
-  <!-- Capa de overlay mejorada con efecto vignette -->
-  <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"></div>
+  <!-- Capa de overlay mejorada -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
 
   <!-- Contenido -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full px-8 md:px-16 text-center">
-    <!-- Contenedor del logo con efecto vidrio moderno -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-8 text-center">
+    <!-- Contenedor del logo con efecto borde vidrio -->
     <div class="backdrop-blur-xl bg-white/30 p-6 rounded-3xl shadow-2xl mb-8 animate-fade-in-down border border-white/10">
       <img
           src={logoUrl}
@@ -39,23 +39,21 @@ const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20inter
       />
     </div>
 
-    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white [text-shadow:_0_2px_8px_rgb(0_0_0_/_50%)]">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white [text-shadow:_0_2px_12px_rgb(0_0_0_/_40%)]">
       {title}
     </h1>
 
-    <p class="mt-6 text-xl md:text-3xl max-w-3xl leading-relaxed text-gray-200 font-medium backdrop-blur-lg bg-white/10 px-6 py-4 rounded-xl border border-white/10">
+    <p class="mt-4 text-xl md:text-2xl max-w-2xl leading-relaxed text-gray-200 font-medium">
       {subtitle}
     </p>
 
     <a
         href={whatsappUrl}
-        class="mt-12 px-10 py-5 bg-gradient-to-r from-pink-600 to-red-600 hover:from-red-700 hover:to-pink-700 text-white text-2xl font-bold rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 border-2 border-white/20 hover:border-white/40 group"
+        class="mt-10 px-8 py-4 bg-gradient-to-r from-pink-600 to-red-600 hover:from-red-700 hover:to-pink-700 text-white text-xl md:text-2xl font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/20"
         target="_blank"
         rel="noopener noreferrer"
     >
-      <span class="group-hover:tracking-wide transition-all duration-300">
-        {callToAction}
-      </span>
+      {callToAction}
     </a>
   </div>
 </section>
