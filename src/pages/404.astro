@@ -1,38 +1,112 @@
 ---
 const homeUrl: string = "/"; // Reemplaza con la URL de tu página de inicio
 import Layout from "../layouts/Layout.astro";
+const socialLinks = [
+  { name: "LinkedIn", url: "https://linkedin.com/in/adrianguerra", icon: "/images/svg/li.svg" },
+  { name: "GitHub", url: "https://github.com/Guerra-666", icon: "/images/svg/git.svg" },
+  { name: "Website", url: "https://devguerra.com", icon: "/images/svg/web.svg" },
+];
+const adrianGuerraUrl: string = "https://devguerra.com";
 ---
 <Layout>
-  <section class="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 min-h-screen flex items-center justify-center">
-    <div class="container px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
-      <div class="w-full lg:w-1/2">
-        <p class="text-sm font-medium text-pink-500 dark:text-pink-400">404 error</p>
-        <h1 class="mt-3 text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">Página no encontrada</h1>
-        <p class="mt-4 text-gray-500 dark:text-gray-400">Lo sentimos, la página que estás buscando no existe. Aquí tienes algunos enlaces útiles:</p>
-        
-        <div class="flex items-center mt-6 gap-x-3">
-          <a
-            href="javascript:history.back()"
-            class="flex items-center justify-center w-1/2 px-5 py-2 text-sm text-gray-700 transition-colors duration-200 bg-white border rounded-lg gap-x-2 sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:border-gray-700"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:rotate-180">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
-            </svg>
-            <span>Volver</span>
-          </a>
-          
-          <a
-            href={homeUrl}
-            class="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg shrink-0 sm:w-auto hover:from-red-500 hover:to-pink-500 dark:hover:from-pink-600 dark:hover:to-red-600"
-          >
-            Ir al inicio
-          </a>
+  <section class="bg-gradient-to-b from-gray-50 to-white min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Efecto de textura -->
+    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+
+    <div class="container px-4 md:px-8 mx-auto relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
+        <!-- Contenido principal -->
+        <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left">
+          <!-- Número 404 con efecto -->
+          <div class="animate-float opacity-0 [animation-fill-mode:forwards]">
+            <span class="text-9xl md:text-[180px] font-black bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
+              404
+            </span>
+          </div>
+
+          <!-- Textos -->
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 opacity-0 animate-fade-in-up [animation-delay:300ms]">
+            Página no encontrada
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 opacity-0 animate-fade-in-up [animation-delay:500ms]">
+            La página que buscas ha bailado fuera del escenario...
+          </p>
+
+          <!-- Botones -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-in-up [animation-delay:700ms]">
+            <a
+                href="javascript:history.back()"
+                class="px-6 py-3 bg-white border-2 border-gray-200 rounded-xl font-medium hover:border-pink-500 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              Volver atrás
+            </a>
+
+            <a
+                href={homeUrl}
+                class="px-6 py-3 bg-gradient-to-r from-pink-600 to-red-600 text-white rounded-xl font-semibold hover:from-red-700 hover:to-pink-700 hover:scale-105 transition-all duration-300"
+            >
+              Ir al inicio
+            </a>
+          </div>
+
+          <!-- Info desarrollador -->
+          <div class="mt-12 opacity-0 animate-fade-in-up [animation-delay:900ms]">
+            <div class="inline-flex flex-col items-center bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200/50">
+              <p class="text-gray-600 mb-2">Desarrollado por</p>
+              <a
+                  href={adrianGuerraUrl}
+                  class="text-lg font-medium bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent hover:underline"
+              >
+                Adrian Guerra Dev
+              </a>
+              <div class="flex gap-4 mt-4">
+                {socialLinks.map((link) => (
+                    <a
+                        key={link.name}
+                        href={link.url}
+                        class="p-2 rounded-full bg-white border border-gray-200/50 hover:border-pink-500/50 shadow-sm hover:shadow-md transition-all duration-300"
+                    >
+                      <img src={link.icon} alt={link.name} class="w-6 h-6"/>
+                    </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ilustración -->
+        <div class="w-full lg:w-1/2 opacity-0 animate-fade-in-left [animation-delay:1100ms]">
+          <div class="relative max-w-xl mx-auto">
+            <img
+                src="public/images/LogoDiballu.png"
+                alt="Error 404"
+                class="w-full h-auto rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent"></div>
+          </div>
         </div>
       </div>
-
-      <div class="relative w-full mt-12 lg:w-1/2 lg:mt-0">
-        <img class="w-full max-w-lg lg:mx-auto" src="public/images/logo.webp" alt="Ilustración de error 404">
-      </div>
     </div>
+
+    <style>{
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+      @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in-left {
+        0% { opacity: 0; transform: translateX(40px); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+      .animate-float { animation: float 4s ease-in-out infinite; }
+      .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
+      .animate-fade-in-left { animation: fade-in-left 0.6s ease-out forwards; }
+    }</style>
   </section>
 </Layout>

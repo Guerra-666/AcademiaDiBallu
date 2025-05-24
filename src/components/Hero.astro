@@ -11,7 +11,32 @@ const logoUrl: string = "/images/LogoDiballu.png";
 const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20interesaria%20agendar%20una%20clase%20muestra,%20me%20podria%20brindar%20mas%20informes"; // Reemplaza con tu número de WhatsApp y mensaje predeterminado
 ---
 <section class="relative h-screen overflow-hidden">
-  <!-- Fondo con imágenes alternadas -->
+  <style>
+    @keyframes float-logo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    @keyframes text-appear {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .logo-float {
+      animation: float-logo 6s ease-in-out infinite;
+    }
+    .text-appear {
+      animation: text-appear 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+    }
+    .bg-pan {
+      animation: bg-pan 20s linear infinite;
+    }
+    @keyframes bg-pan {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+
+  <!-- Fondo con efecto de transición suave -->
   <div class="absolute inset-0">
     {backgroundImages.map((image, index) => (
         <div
@@ -24,36 +49,55 @@ const whatsappUrl: string = "https://wa.me/5217713384831?text=Hola,%20me%20inter
     ))}
   </div>
 
-  <!-- Capa de overlay mejorada -->
+  <!-- Overlay dinámico -->
   <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
 
-  <!-- Contenido -->
+  <!-- Contenido principal -->
   <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-8 text-center">
-    <!-- Contenedor del logo con efecto borde vidrio -->
-    <div class="backdrop-blur-xl bg-white/30 p-6 rounded-3xl shadow-2xl mb-8 animate-fade-in-down border border-white/10">
+    <!-- Logo con efecto flotante y halo luminoso -->
+    <div class="relative mb-8 animate-fade-in-down logo-float">
+      <div class="absolute inset-0 -m-4 backdrop-blur-2xl bg-white/20 rounded-full border-2 border-white/10 shadow-2xl
+                  before:absolute before:inset-0 before:rounded-full before:bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.2)_0%,_transparent_70%)] before:opacity-0 before:hover:opacity-100 before:transition-opacity before:duration-300">
+      </div>
       <img
           src={logoUrl}
           alt="Logo de la Academia de Danza"
-          class="w-52 md:w-80 h-auto contrast-125 brightness-110 drop-shadow-2xl"
+          class="relative z-10 w-48 md:w-64 h-auto contrast-125 brightness-105 transform transition-transform duration-300 hover:scale-105"
           loading="eager"
       />
     </div>
 
-    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white [text-shadow:_0_2px_12px_rgb(0_0_0_/_40%)]">
+
+    <!-- Título con animación escalonada -->
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white [text-shadow:_0_2px_12px_rgb(0_0_0_/_40%)] opacity-0 text-appear"
+        style="animation-delay: 0.3s">
       {title}
     </h1>
 
-    <p class="mt-4 text-xl md:text-2xl max-w-2xl leading-relaxed text-gray-200 font-medium">
-      {subtitle}
-    </p>
+    <!-- Subtítulo con animación y efecto de revelado -->
+    <div class="overflow-hidden">
+      <p class="mt-4 text-xl md:text-2xl max-w-2xl leading-relaxed text-gray-200 font-medium opacity-0 text-appear"
+         style="animation-delay: 0.6s">
+        <span class="inline-block [animation:slide-up_0.5s_ease-out]">
+          {subtitle}
+        </span>
+      </p>
+    </div>
 
+    <!-- Botón CTA con efecto hover mejorado -->
     <a
         href={whatsappUrl}
-        class="mt-10 px-8 py-4 bg-gradient-to-r from-pink-600 to-red-600 hover:from-red-700 hover:to-pink-700 text-white text-xl md:text-2xl font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/20"
+        class="mt-10 px-8 py-4 bg-gradient-to-r from-pink-600 to-red-600 hover:from-red-700 hover:to-pink-700 text-white text-xl md:text-2xl font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white/20 opacity-0 text-appear relative overflow-hidden group"
+        style="animation-delay: 0.9s"
         target="_blank"
         rel="noopener noreferrer"
     >
-      {callToAction}
+      <span class="relative z-10 group-hover:tracking-wide transition-all duration-300">
+        {callToAction}
+      </span>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.3)_transparent]
+                  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      </div>
     </a>
   </div>
 </section>
