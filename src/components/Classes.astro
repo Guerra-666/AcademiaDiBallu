@@ -19,12 +19,6 @@ const classes: Class[] = [
     icon: "🩰",
   },
   {
-    name: "Ballet Inicial",
-    description:
-      "Comienza tu travesía en el ballet con clases enfocadas en desarrollar las bases esenciales. Descubre la elegancia y técnica desde el primer paso.",
-    icon: "🩰",
-  },
-  {
     name: "Ballet Intermedio",
     description:
       "Eleva tu nivel con clases diseñadas para perfeccionar técnica, postura y expresión. Ideal para quienes buscan llevar su danza al próximo nivel.",
@@ -43,12 +37,6 @@ const classes: Class[] = [
     icon: "🕺",
   },
   {
-    name: "Folklor",
-    description:
-      "Celebra nuestras raíces y tradiciones con clases llenas de color, historia y cultura. Aprende a transmitir el espíritu del folclor en cada paso.",
-    icon: "🌾",
-  },
-  {
     name: "Jazz",
     description:
       "Libera tu energía con movimientos dinámicos y llenos de estilo. Nuestras clases de jazz combinan técnica, ritmo y diversión en cada sesión.",
@@ -57,52 +45,44 @@ const classes: Class[] = [
 ];
 
 ---
-<section class="bg-gradient-to-b from-gray-50 to-white py-12 md:py-24 relative overflow-hidden">
+<section class="bg-gradient-to-b from-gray-50 to-white py-8 md:py-24 relative overflow-hidden">
   <!-- Efecto de textura -->
-  <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:30px_30px] opacity-20"></div>
 
-  <div class="container mx-auto px-4 md:px-8 relative z-10">
-    <!-- Título mejorado -->
-    <h2 class="text-4xl md:text-6xl font-bold mb-12 md:mb-20 text-gray-900 text-center">
+  <div class="container mx-auto px-3 md:px-8 relative z-10">
+    <!-- Título mejorado para mobile -->
+    <h2 class="text-3xl md:text-6xl font-bold mb-8 md:mb-20 text-gray-900 text-center px-2">
       Descubre nuestras <span class="bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">clases</span>
     </h2>
 
-    <!-- Grid de Clases -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+    <!-- Grid optimizado para 2 columnas en mobile -->
+    <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
       {classes.map((classItem, index) => (
           <article
               key={index}
-              class="group relative rounded-2xl bg-gradient-to-r from-pink-500/20 via-red-500/20 to-yellow-500/20 p-[2px] shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in-up"
-              style={`animation-delay: ${index * 75}ms`}
+              class="group relative rounded-xl md:rounded-2xl bg-gradient-to-r from-pink-500/20 via-red-500/20 to-yellow-500/20 p-[1px] md:p-[2px] shadow-md hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+              style={`animation-delay: ${index * 50}ms`}
           >
             <!-- Efecto de fondo vidriado -->
-            <div class="absolute inset-0 rounded-2xl backdrop-blur-sm bg-white/50"></div>
+            <div class="absolute inset-0 rounded-xl md:rounded-2xl backdrop-blur-sm bg-white/50"></div>
 
-            <div class="relative rounded-2xl bg-white/95 backdrop-blur-xs p-6 flex flex-col items-center h-full border border-white/20">
-              <!-- Icono con gradiente -->
-              <div class="mb-6 p-4 bg-gradient-to-br from-pink-100/50 to-red-100/30 rounded-2xl backdrop-blur-sm border border-white/20">
-              <span class="text-5xl md:text-6xl bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
-                {classItem.icon}
-              </span>
+            <div class="relative rounded-xl md:rounded-2xl bg-white/95 backdrop-blur-xs p-3 md:p-6 flex flex-col items-center h-full border border-white/20">
+              <!-- Icono optimizado -->
+              <div class="mb-3 md:mb-6 p-2 md:p-4 bg-gradient-to-br from-pink-100/40 to-red-100/20 rounded-xl md:rounded-2xl backdrop-blur-sm border border-white/20">
+                <span class="text-4xl md:text-5xl bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
+                  {classItem.icon}
+                </span>
               </div>
 
-              <!-- Contenido -->
-              <div class="flex-1 flex flex-col items-center">
-                <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">
+              <!-- Contenido compacto -->
+              <div class="flex-1 flex flex-col items-center space-y-2 md:space-y-4">
+                <h3 class="text-base md:text-xl font-bold text-gray-900 mb-1 md:mb-4 text-center leading-tight">
                   {classItem.name}
                 </h3>
-                <p class="text-gray-600 leading-relaxed text-center mb-6 backdrop-blur-xs bg-white/50 px-4 py-2 rounded-lg">
+                <p class="text-xs md:text-base text-gray-600 leading-snug md:leading-relaxed text-center backdrop-blur-xs bg-white/50 px-2 py-1 md:px-4 md:py-2 rounded-md md:rounded-lg">
                   {classItem.description}
                 </p>
               </div>
-
-              {/* Botón opcional */}
-              {/* <a
-              href="#"
-              class="mt-4 px-6 py-2 bg-gradient-to-r from-pink-500 to-red-500 text-white rounded-full text-sm font-medium hover:from-red-500 hover:to-pink-500 transition-all duration-300"
-            >
-              Más información
-            </a> */}
             </div>
           </article>
       ))}
@@ -110,86 +90,20 @@ const classes: Class[] = [
   </div>
 
   <style>
-    /* Animaciones personalizadas */
-    @keyframes fade-in-up {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+    /* Optimizaciones mobile-first */
+    @media (max-width: 640px) {
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-    @keyframes float-icon {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
+      .group:hover {
+        animation: none; /* Desactiva animaciones hover en mobile */
+      }
 
-    @keyframes card-hover {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
-      100% { transform: translateY(0); }
-    }
-
-    /* Estilos base */
-    .animate-fade-in-up {
-      animation: fade-in-up 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-    }
-
-    .backdrop-blur-xs {
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
-    }
-
-    /* Efectos hover para tarjetas */
-    .group:hover .group-hover\:animate-float-icon {
-      animation: float-icon 3s ease-in-out infinite;
-    }
-
-    .group:hover {
-      animation: card-hover 1.5s ease-in-out infinite;
-      transform-origin: center bottom;
-    }
-
-    /* Mejoras de gradiente interactivo */
-    .group::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      background: linear-gradient(
-          45deg,
-          rgba(236, 72, 153, 0.2) 0%,
-          rgba(239, 68, 68, 0.2) 50%,
-          rgba(234, 179, 8, 0.2) 100%
-      );
-      border-radius: 1rem;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .group:hover::before {
-      opacity: 1;
-    }
-
-    /* Efecto de brillo en iconos */
-    .group:hover span[class*="bg-gradient"] {
-      position: relative;
-    }
-
-    .group:hover span[class*="bg-gradient"]::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle at center,
-      rgba(255,255,255,0.4) 0%,
-      rgba(255,255,255,0) 70%);
-      animation: shine 2s infinite;
-    }
-
-    @keyframes shine {
-      0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translate(50%, 50%) scale(1); opacity: 0; }
+      .backdrop-blur-xs {
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+      }
     }
   </style>
 </section>
