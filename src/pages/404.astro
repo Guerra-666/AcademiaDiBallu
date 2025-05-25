@@ -13,100 +13,88 @@ const adrianGuerraUrl: string = "https://devguerra.com";
     <!-- Efecto de textura -->
     <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
 
-    <div class="container px-4 md:px-8 mx-auto relative z-10">
-      <div class="flex flex-col lg:flex-row items-center gap-12 md:gap-16">
-        <!-- Contenido principal -->
-        <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left">
-          <!-- Número 404 con efecto -->
-          <div class="animate-float opacity-0 [animation-fill-mode:forwards]">
-            <span class="text-9xl md:text-[180px] font-black bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
-              404
-            </span>
-          </div>
-
-          <!-- Textos -->
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 opacity-0 animate-fade-in-up [animation-delay:300ms]">
-            Página no encontrada
-          </h1>
-          <p class="text-xl text-gray-600 mb-8 opacity-0 animate-fade-in-up [animation-delay:500ms]">
-            La página que buscas ha bailado fuera del escenario...
-          </p>
-
-          <!-- Botones -->
-          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-in-up [animation-delay:700ms]">
-            <a
-                href="javascript:history.back()"
-                class="px-6 py-3 bg-white border-2 border-gray-200 rounded-xl font-medium hover:border-pink-500 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-              </svg>
-              Volver atrás
-            </a>
-
-            <a
-                href={homeUrl}
-                class="px-6 py-3 bg-gradient-to-r from-pink-600 to-red-600 text-white rounded-xl font-semibold hover:from-red-700 hover:to-pink-700 hover:scale-105 transition-all duration-300"
-            >
-              Ir al inicio
-            </a>
-          </div>
-
-          <!-- Info desarrollador -->
-          <div class="mt-12 opacity-0 animate-fade-in-up [animation-delay:900ms]">
-            <div class="inline-flex flex-col items-center bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200/50">
-              <p class="text-gray-600 mb-2">Desarrollado por</p>
-              <a
-                  href={adrianGuerraUrl}
-                  class="text-lg font-medium bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent hover:underline"
-              >
-                Adrian Guerra Dev
-              </a>
-              <div class="flex gap-4 mt-4">
-                {socialLinks.map((link) => (
-                    <a
-                        key={link.name}
-                        href={link.url}
-                        class="p-2 rounded-full bg-white border border-gray-200/50 hover:border-pink-500/50 shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                      <img src={link.icon} alt={link.name} class="w-6 h-6"/>
-                    </a>
-                ))}
-              </div>
-            </div>
-          </div>
+    <div class="container px-4 mx-auto relative z-10">
+      <div class="flex flex-col items-center justify-center text-center">
+        <!-- Logo de la academia -->
+        <div class="mb-8 md:mb-12 animate-fade-in-down">
+          <img
+            src="/images/LogoDiballu.webp"
+            alt="Logo Di Ballu"
+            class="w-40 md:w-56 h-auto mx-auto contrast-125 brightness-105 transform transition-transform duration-300 hover:scale-105"
+            loading="eager"
+          />
         </div>
 
-        <!-- Ilustración -->
-        <div class="w-full lg:w-1/2 opacity-0 animate-fade-in-left [animation-delay:1100ms]">
-          <div class="relative max-w-xl mx-auto">
-            <img
-                src="public/images/LogoDiballu.png"
-                alt="Error 404"
-                class="w-full h-auto rounded-2xl shadow-2xl transform transition-transform duration-500 hover:scale-105"
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-white/30 to-transparent"></div>
+        <!-- Número 404 con efecto -->
+        <div class="animate-float mb-8 md:mb-12">
+          <span class="text-8xl md:text-[150px] font-black bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
+            404
+          </span>
+        </div>
+
+        <!-- Textos -->
+        <div class="max-w-3xl mx-auto space-y-4 md:space-y-6">
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 opacity-0 animate-fade-in-up [animation-delay:300ms]">
+            Página no encontrada
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 opacity-0 animate-fade-in-up [animation-delay:500ms] px-4">
+            La página que buscas ha bailado fuera del escenario...
+          </p>
+        </div>
+
+        <!-- Botones -->
+        <!-- Botón anterior -->
+<button 
+onclick="window.history.back()"
+class="px-6 py-3 bg-white border-2 border-gray-200 rounded-xl font-medium hover:border-pink-500 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2"
+role="button"
+tabindex="0"
+>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+</svg>
+Volver atrás
+</button>
+
+        <!-- Info desarrollador -->
+        <div class="mt-12 md:mt-16 opacity-0 animate-fade-in-up [animation-delay:900ms]">
+          <div class="inline-flex flex-col items-center bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-gray-200/50">
+            <p class="text-gray-600 mb-2 text-sm md:text-base">Desarrollado por</p>
+            <a
+              href={adrianGuerraUrl}
+              class="text-base md:text-lg font-medium bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent hover:underline"
+            >
+              Adrian Guerra Dev
+            </a>
+            <div class="flex gap-4 mt-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  class="p-2 rounded-full bg-white border border-gray-200/50 hover:border-pink-500/50 shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <img src={link.icon} alt={link.name} class="w-5 h-5 md:w-6 md:h-6"/>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <style>{
+
       @keyframes float {
         0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
+        50% { transform: translateY(-15px); }
       }
       @keyframes fade-in-up {
         0% { opacity: 0; transform: translateY(20px); }
         100% { opacity: 1; transform: translateY(0); }
       }
-      @keyframes fade-in-left {
-        0% { opacity: 0; transform: translateX(40px); }
-        100% { opacity: 1; transform: translateX(0); }
-      }
       .animate-float { animation: float 4s ease-in-out infinite; }
       .animate-fade-in-up { animation: fade-in-up 0.6s ease-out forwards; }
-      .animate-fade-in-left { animation: fade-in-left 0.6s ease-out forwards; }
+
     }</style>
   </section>
 </Layout>
