@@ -10,31 +10,26 @@ interface Event {
 
 const events: Event[] = [
   {
-    date: "2025-11-15",
-    name: "Gala de Invierno",
-    location: "Teatro Metropolitan",
+    date: "2025-07-20",
+    name: "Gala Semestral",
+    location: "Teatro Cedrus",
     ticketsUrl: "https://example.com/tickets/gala-invierno",
-    imageUrl: "/images/metropolitan.webp",
-    mapUrl: "https://www.google.com/maps?q=Teatro+Principal",
+    imageUrl: "/images/cedrus.webp",
+    mapUrl: "https://maps.app.goo.gl/gQkwL1Jf1cAzYb2F8",
   },
   {
-    date: "2025-12-20",
-    name: "Festival Navideño",
-    location: "Auditorio Nacional",
+    date: "2025-12-10",
+    name: "Gala Navideña",
+    location: "Teatro Cedrus",
     ticketsUrl: "https://example.com/tickets/festival-navideno",
-    imageUrl: "/images/nacional.webp",
-    mapUrl: "https://www.google.com/maps?q=Auditorio+Norte",
+    imageUrl: "/images/cedrus.webp",
+    mapUrl: "https://maps.app.goo.gl/gQkwL1Jf1cAzYb2F8",
   },
 ];
 
 const generateWhatsAppUrl = (event) => {
-  const message = `Hola, estoy interesado en obtener más información sobre el evento "${event.name}" que se llevará a cabo el ${new Date(event.date).toLocaleDateString("es-ES", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  })} en ${event.location}.`;
-  return `https://wa.me/5217713384831?text=${encodeURIComponent(message)}`; // Reemplaza 5217713384831 con el número de WhatsApp
+  const message = `Hola, estoy interesado en obtener más información sobre la ${event.name}`;
+  return `https://wa.me/7713384831?text=${encodeURIComponent(message)}`; // Reemplaza 5217713384831 con el número de WhatsApp
 };
 ---
 

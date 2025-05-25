@@ -36,88 +36,89 @@ const branches: Branch[] = [
   },
 ];
 ---
-<section class="bg-gradient-to-b from-gray-50 to-white py-12 md:py-24 relative overflow-hidden">
+<section class="bg-gradient-to-b from-gray-50 to-white py-8 md:py-16 relative overflow-hidden">
   <!-- Efecto de textura decorativa -->
-  <div class="absolute inset-0 bg-[radial-gradient(#f3f4f6_1px,transparent_1px)] bg-[size:40px_40px] opacity-20"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(#f3f4f6_1px,transparent_1px)] bg-[size:30px_30px] opacity-20"></div>
 
-  <div class="container mx-auto px-4 md:px-8 relative z-10">
-    <!-- Título mejorado -->
-    <h2 class="text-center text-4xl md:text-6xl font-bold mb-12 md:mb-20 text-gray-900">
+  <div class="container mx-auto px-3 md:px-6 relative z-10">
+    <!-- Título ajustado -->
+    <h2 class="text-center text-3xl md:text-5xl font-bold mb-8 md:mb-12 text-gray-900 px-2">
       <span class="bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
         Nuestras sucursales
       </span>
     </h2>
 
-    <!-- Grid de Sucursales -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
+    <!-- Grid optimizado -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
       {branches.map((branch) => (
-          <div class="group relative bg-white p-6 md:p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200/50 hover:border-gray-300/80">
-            <!-- Cabecera con efecto gradiente -->
-            <div class="mb-6 pb-6 border-b border-gray-200/50">
-              <div class="flex items-center justify-between gap-4">
-                <h3 class="text-2xl md:text-3xl font-bold text-gray-900">
+        <div class="group relative bg-white p-4 md:p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200/50 hover:border-gray-300/60">
+          <!-- Cabecera compacta -->
+          <div class="mb-4 pb-4 border-b border-gray-200/40">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 truncate">
                   {branch.name}
                 </h3>
-                <a
-                    href={branch.mapUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-2 bg-gradient-to-r from-pink-100 to-red-100 rounded-xl hover:scale-110 transition-transform duration-300 shadow-sm"
-                    aria-label={`Ver ubicación de ${branch.name}`}
-                >
-                  <img
-                      src="/images/iconos/ubi.png"
-                      alt="Ubicación"
-                      class="w-6 h-6 md:w-7 md:h-7"
-                  />
-                </a>
+                <p class="mt-2 text-xs md:text-sm text-gray-600 leading-tight">
+                  {branch.address}
+                </p>
               </div>
-              <p class="mt-4 text-gray-600 text-sm md:text-base leading-relaxed">
-                {branch.address}
-              </p>
-            </div>
-
-            <!-- Mapa interactivo -->
-            <div class="relative mb-8 overflow-hidden rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-[1.02]">
-              <iframe
-                  src={branch.mapUrl}
-                  title={`Mapa de ${branch.name}`}
-                  class="w-full h-48 md:h-56 lg:h-64"
-                  allowfullscreen=""
-                  loading="lazy"
-              ></iframe>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-            </div>
-
-            <!-- Horario mejorado -->
-            <div class="space-y-5">
-              {branch.schedule.map((scheduleItem) => (
-                  <div class="flex flex-col md:flex-row gap-4 p-4 bg-gray-50/50 rounded-xl hover:bg-gray-100/30 transition-colors duration-200">
-                    <!-- Día -->
-                    <div class="flex items-center md:w-28 flex-none">
-                      <span class="w-3 h-3 bg-gradient-to-r from-pink-500 to-red-500 rounded-full mr-3"></span>
-                      <span class="text-sm md:text-base font-semibold text-gray-700">
-                    {scheduleItem.day}
-                  </span>
-                    </div>
-
-                    <!-- Clases -->
-                    <div class="flex-1 space-y-3">
-                      {scheduleItem.classes.map((classItem) => (
-                          <div class="flex justify-between items-center bg-white px-4 py-3 rounded-lg shadow-sm border border-gray-200/50">
-                      <span class="text-sm md:text-base font-medium text-gray-700">
-                        {classItem.name}
-                      </span>
-                            <span class="text-sm md:text-base font-semibold bg-gradient-to-r from-pink-600 to-red-600 bg-clip-text text-transparent">
-                        {classItem.time}
-                      </span>
-                          </div>
-                      ))}
-                    </div>
-                  </div>
-              ))}
+              <a
+                href={branch.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-1.5 bg-gradient-to-r from-pink-50 to-red-50 rounded-lg hover:scale-105 transition-transform duration-200 shadow-xs"
+                aria-label={`Ver ubicación de ${branch.name}`}
+              >
+                <svg class="w-5 h-5 md:w-6 md:h-6 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </a>
             </div>
           </div>
+
+          <!-- Mapa compacto -->
+          <div class="relative mb-4 overflow-hidden rounded-xl shadow-sm transform transition-transform duration-300 hover:scale-[1.01]">
+            <iframe
+              src={branch.mapUrl}
+              title={`Mapa de ${branch.name}`}
+              class="w-full h-40 md:h-48 lg:h-56"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+          </div>
+
+          <!-- Horario ultra compacto -->
+          <div class="space-y-3">
+            {branch.schedule.map((scheduleItem) => (
+              <div class="flex flex-col md:flex-row gap-2 p-2 bg-gray-50/40 rounded-lg hover:bg-gray-100/20 transition-colors duration-150">
+                <!-- Día -->
+                <div class="flex items-center md:w-24 flex-none">
+                  <span class="w-2 h-2 bg-gradient-to-r from-pink-400 to-red-400 rounded-full mr-2"></span>
+                  <span class="text-xs md:text-sm font-medium text-gray-700 truncate">
+                    {scheduleItem.day}
+                  </span>
+                </div>
+                
+                <!-- Clases -->
+                <div class="flex-1 grid gap-1.5">
+                  {scheduleItem.classes.map((classItem) => (
+                    <div class="flex justify-between items-center bg-white px-2.5 py-1.5 rounded-md shadow-xs border border-gray-200/30 text-xs md:text-sm">
+                      <span class="font-medium text-gray-700 truncate">
+                        {classItem.name}
+                      </span>
+                      <span class="font-semibold bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent ml-2">
+                        {classItem.time}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       ))}
     </div>
   </div>

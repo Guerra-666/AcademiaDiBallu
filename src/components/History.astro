@@ -1,7 +1,7 @@
 ---
 const description: string =
   "En 2018, Juan De Dios, con más de 20 años de experiencia en la danza, fundó la Academia de Danza Di Ballu con el sueño de transformar vidas a través del arte. Su pasión y profesionalismo dieron vida a un espacio donde niños y jóvenes no solo aprenden a bailar, sino también a desarrollar disciplina, confianza y amor por la expresión artística. Con un equipo de docentes dedicados y programas diseñados para el crecimiento integral, Di Ballu se ha convertido en un hogar para quienes buscan superar sus límites y brillar. Aquí, cada paso cuenta una historia, y cada logro refleja el poder de la danza para inspirar y transformar.";
-const imageUrl: string = "/images/historia/equipo.webp"; // Asegúrate de tener esta imagen en tu carpeta de imágenes
+const imageUrl: string = "/images/historia/equipo.webp"; 
 const galleryImages: string[] = [
   "/images/historia/galeria1.webp",
   "/images/historia/galeria2.webp",
@@ -11,7 +11,7 @@ const galleryImages: string[] = [
   "/images/historia/galeria6.webp",
   "/images/historia/galeria7.webp",
   "/images/historia/galeria8.webp",
-]; // Asegúrate de tener estas imágenes en tu carpeta de imágenes
+]; 
 ---
 
 <section class="bg-gradient-to-b from-gray-50 to-white py-12 md:py-24 relative overflow-hidden" id="history">
@@ -63,3 +63,28 @@ const galleryImages: string[] = [
     </div>
   </div>
 </section>
+
+<style>
+  
+  /* Texto descriptivo */
+  .text-gray-700 {
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  .text-gray-700::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(219, 39, 119, 0.8),
+      rgba(190, 24, 93, 0.6)
+    );
+    border-radius: 2px;
+  }
+
+</style>
