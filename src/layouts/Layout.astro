@@ -1,103 +1,139 @@
 ---
-const siteTitle = "Academia de Danza Di Ballu - Clases de Danza y Ballet en Pachuca";
-const siteDescription = "Academia de Danza Di Ballu - Transformamos movimientos en arte. Descubre el amor por la danza.";
+const siteTitle =
+  "Academia de Danza Di Ballu - Clases de Danza y Ballet en Pachuca";
+const siteDescription =
+  "Academia de Danza Di Ballu - Transformamos movimientos en arte. Descubre el amor por la danza.";
 const siteUrl = "https://academiadiballu.netlify.app/";
 const siteImage = "/images/LogoDiballu.webp";
-const siteImageAlt = "Logo de la Academia de Danza Di Ballu";
-const keywords = "danza, academia de danza, arte, baile, clases de baile, Di Ballu";
+const keywords =
+  "danza, academia de danza, arte, baile, clases de baile, Di Ballu";
 ---
 
 <!doctype html>
 <html lang="es-MX" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="index, follow" />
-  <meta name="keywords" content={keywords} />
-  <meta name="author" content="Academia de Danza Di Ballu" />
-  <meta name="generator" content={Astro.generator} />
-  <link rel="canonical" href={siteUrl} />
-  <meta name="theme-color" content="#DB2777" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="Academia de Danza Di Ballu" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={siteUrl} />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/images/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/icons/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="DiBallu" />
+    <link rel="manifest" href="/images/icons/site.webmanifest" />
 
-  <!-- Primary Meta Tags -->
-  <title>{siteTitle}</title>
-  <meta name="description" content={siteDescription} />
+    <!-- Primary Meta Tags -->
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={siteUrl} />
-  <meta property="og:title" content={siteTitle} />
-  <meta property="og:description" content={siteDescription} />
-  <meta property="og:image" content={siteImage} />
-  <meta property="og:image:alt" content="Imagen representativa de la Academia de Danza Di Ballu" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={siteImage} />
+    <meta
+      property="og:image:alt"
+      content="Imagen representativa de la Academia de Danza Di Ballu"
+    />
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content={siteUrl} />
-  <meta property="twitter:title" content={siteTitle} />
-  <meta property="twitter:description" content={siteDescription} />
-  <meta property="twitter:image" content={siteImage} />
-  <meta name="twitter:creator" content="@tu_usuario" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={siteImage} />
+    <meta name="twitter:creator" content="@tu_usuario" />
 
-  <!-- Favicon y Fuentes -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon y Fuentes -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Estilos Globales -->
-  <style>
-    :root {
-      --color-primary: 219, 39, 119;  /* pink-600 */
-      --color-secondary: 239, 68, 68; /* red-600 */
-    }
-  </style>
-  <link rel="stylesheet" href="/src/styles/global.css" />
-</head>
+    <!-- Estilos Globales -->
+    <style>
+      :root {
+        --color-primary: 219, 39, 119; /* pink-600 */
+        --color-secondary: 239, 68, 68; /* red-600 */
+      }
+    </style>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
 
-<body class="bg-gradient-to-b from-gray-50 to-white font-sans antialiased">
-<!-- Fondo texturizado -->
-<div class="fixed inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 -z-10"></div>
+  <body class="bg-gradient-to-b from-gray-50 to-white font-sans antialiased">
+    <!-- Fondo texturizado -->
+    <div
+      class="fixed inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 -z-10"
+    >
+    </div>
 
-<main class="min-h-screen">
-  <slot />
-</main>
+    <main class="min-h-screen">
+      <slot />
+    </main>
 
-<!-- Botón flotante mejorado -->
-<button
-    id="scrollToTop"
-    aria-label="Ir al inicio"
-    class="fixed bottom-8 right-8 opacity-0 transition-all duration-300
+    <!-- Botón flotante mejorado -->
+    <button
+      id="scrollToTop"
+      aria-label="Ir al inicio"
+      class="fixed bottom-8 right-8 opacity-0 transition-all duration-300
              bg-gradient-to-r from-pink-600 to-red-600 hover:from-red-700 hover:to-pink-700
              p-4 rounded-full shadow-2xl hover:shadow-3xl hover:scale-110
-             text-white cursor-pointer z-[999]"> <!-- Clase z-index agregada -->
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-       stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" d="M5 15l7-7 7 7"/>
-  </svg>
-</button>
+             text-white cursor-pointer z-[999]"
+    >
+      <!-- Clase z-index agregada -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        class="w-6 h-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 15l7-7 7 7"></path>
+      </svg>
+    </button>
 
-<script>
-  // Scroll suave y animación del botón
-  document.addEventListener('DOMContentLoaded', () => {
-    const scrollButton = document.getElementById('scrollToTop');
+    <script>
+      // Scroll suave y animación del botón
+      document.addEventListener("DOMContentLoaded", () => {
+        const scrollButton = document.getElementById("scrollToTop");
 
-    window.addEventListener('scroll', () => {
-      const show = window.scrollY > 500;
-      scrollButton.style.opacity = show ? '1' : '0';
-      scrollButton.style.pointerEvents = show ? 'all' : 'none';
-    });
+        window.addEventListener("scroll", () => {
+          const show = window.scrollY > 500;
+          scrollButton.style.opacity = show ? "1" : "0";
+          scrollButton.style.pointerEvents = show ? "all" : "none";
+        });
 
-    scrollButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+        scrollButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
       });
-    });
-  });
-</script>
-</body>
+    </script>
+  </body>
 </html>
 
 <style>
@@ -113,7 +149,11 @@ const keywords = "danza, academia de danza, arte, baile, clases de baile, Di Bal
 
   :global(body) {
     @apply min-h-screen bg-gradient-to-b from-gray-50 to-white;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
   }
 
   :global(.animate-fade-in-up) {
@@ -121,7 +161,13 @@ const keywords = "danza, academia de danza, arte, baile, clases de baile, Di Bal
   }
 
   @keyframes fade-in-up {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
